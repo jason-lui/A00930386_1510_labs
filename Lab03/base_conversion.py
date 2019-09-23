@@ -1,8 +1,8 @@
 def base_conversion():
     """
-    Converts a decimal number to the desired base inputted by the user.
+    Convert a decimal number to the desired base inputted by the user.
 
-    :return: None
+    :postcondition: converts the inputted number to the desired base
     """
     base = int(input('Enter the destination base (2-9): '))
     max_base_ten = base ** 4 - 1
@@ -12,11 +12,11 @@ def base_conversion():
 
     quotient = num
     res = string_remainder(quotient, base) + res
-    quotient = quotient // 2
+    quotient = quotient // base
     res = string_remainder(quotient, base) + res
-    quotient = quotient // 2
+    quotient = quotient // base
     res = string_remainder(quotient, base) + res
-    quotient = quotient // 2
+    quotient = quotient // base
     res = string_remainder(quotient, base) + res
 
     res = int(res)
