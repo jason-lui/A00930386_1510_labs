@@ -1,6 +1,6 @@
 def main():
     """
-    Drive the program.
+    Drive the main function.
     """
     # ZeroDivisionError
     integer = 10
