@@ -10,31 +10,42 @@ def base_conversion():
     num = int(input(f'Enter a positive number less than {max_base_ten} to be converted: '))
     res = ""
 
-    quotient = num
-    res = string_remainder(quotient, base) + res
-    quotient = quotient // base
-    res = string_remainder(quotient, base) + res
-    quotient = quotient // base
-    res = string_remainder(quotient, base) + res
-    quotient = quotient // base
-    res = string_remainder(quotient, base) + res
+    res = str(int_div_modulo(1, num, base)) + res
+    res = str(int_div_modulo(2, num, base)) + res
+    res = str(int_div_modulo(3, num, base)) + res
+    res = str(int_div_modulo(4, num, base)) + res
 
     res = int(res)
 
     print(f'The decimal number {num} in base {base} is {res}.')
     return
 
-def string_remainder(quotient, base):
-    """
-    Returns the remainder as a string.
 
-    :param quotient: an integer
-    :param base: an integer
-    :precondition: quotient must be an integer
-    :precondition: base must be an integer
-    :postcondition: generates the remainder as a string
-    :return: the remainder as a string
+def int_div_modulo(place, dividend, divisor):
     """
-    return str(int(quotient) % 2)
+    Calculate the remainder for base conversion in places left of the radix point.
 
-base_conversion()
+    :param place: an integer
+    :param dividend: an integer
+    :param divisor: an integer
+    :precondition: place must be an integer
+    :precondition: dividend must be an integer
+    :precondition: divisor must be an integer
+    :postcondition: an integer of the place of a number in the specified base
+    :return: an integer of the base converted place
+    """
+    # Strip the dividend to the desired form
+    dividend = dividend // (divisor ** (place - 1))
+    return int(dividend % divisor)
+
+
+def main():
+    """
+    Drive the main function
+    """
+    base_conversion()
+
+
+# Call the main function
+if __name__ == '__main__':
+    main()
