@@ -1,6 +1,6 @@
 def base_conversion():
     """
-    Convert a decimal number to the desired base inputted by the user.
+    Convert a decimal number to the desired base.
 
     :postcondition: converts the inputted number to the desired base
     """
