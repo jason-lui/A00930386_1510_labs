@@ -2,7 +2,7 @@ def base_conversion():
     """
     Convert a decimal number to the desired base.
 
-    :postcondition: converts the inputted number to the desired base
+    :postcondition: convert the inputted number to the desired base
     """
     base = int(input('Enter the destination base (2-9): '))
     max_base_ten = base ** 4 - 1
