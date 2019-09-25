@@ -41,7 +41,7 @@ def int_div_modulo(place, dividend, divisor):
 
 def main():
     """
-    Drive the main function
+    Drive the program.
     """
     base_conversion()
 

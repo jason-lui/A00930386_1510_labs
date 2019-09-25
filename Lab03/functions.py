@@ -66,6 +66,13 @@ def generate_letter():
     return chr(random.randint(97, 122))
 
 
-if __name__ == "__main__":
+def main():
+    """
+    Drive the program.
+    """
     print(roll_die(3, 6))
     print(create_name(5))
+
+
+if __name__ == "__main__":
+    main()
