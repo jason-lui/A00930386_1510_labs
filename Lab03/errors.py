@@ -15,7 +15,7 @@ def main():
     # TypeError
     letter = "a"
     type_error_1 = string + integer
-    type_error_2 = zero[-10]
+    type_error_2 = integer[-10]
 
 
 # Call the main function
