@@ -15,7 +15,7 @@ def roll_die(number_of_rolls, number_of_sides):
     res = 0
 
     if number_of_rolls == 0 or number_of_sides == 0:
-        return None
+        return
     if number_of_rolls >= 1:
         res += random.randint(1, number_of_sides)
     if number_of_rolls >= 2:
