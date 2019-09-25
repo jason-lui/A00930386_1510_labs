@@ -2,7 +2,8 @@ def roll_die(number_of_rolls, number_of_sides):
     """
     Roll a die a number of times and returns the total.
 
-    Return 0 if either parameter is not a positive integer. No more than 3 rolls.
+    Return 0 if either parameter is not a positive integer.
+    The die is rolled no more than 3 times.
     :param number_of_rolls: an integer
     :param number_of_sides: an integer
     :precondition: number_of_rolls must be positive
@@ -57,7 +58,7 @@ def generate_letter():
     """
     Generate a letter.
 
-    A random number [97, 122] is given to chr to generate a letter.
+    A random number [97, 122] is given to chr() to generate a letter.
     :postcondition: a random letter is generated
     :return: a letter as a string
     """
