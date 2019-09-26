@@ -1,3 +1,6 @@
+import doctest
+
+
 def base_conversion():
     """
     Convert a decimal number to the desired base.
@@ -34,6 +37,11 @@ def int_div_modulo(place, dividend, divisor):
     :precondition: divisor must be an integer
     :postcondition: an integer of the decimal place as a string
     :return: an string of the base converted place
+
+    >>> int_div_modulo(1, 8, 2)
+    0
+    >>> int_div_modulo(2, 40, 3)
+    1
     """
     # Strip the dividend to the desired form
     dividend = dividend // (divisor ** (place - 1))
@@ -49,4 +57,4 @@ def main():
 
 # Call the main function
 if __name__ == '__main__':
-    main()
+    doctest.testmod()
