@@ -1,3 +1,6 @@
+import doctest
+
+
 def roll_die(number_of_rolls, number_of_sides):
     """
     Roll a die a number of times and returns the total.
@@ -10,6 +13,8 @@ def roll_die(number_of_rolls, number_of_sides):
     :precondition: number_of_sides must be positive
     :postcondition: the sum from the die rolls will be calculated
     :return: the total of the die rolls
+
+    # Do not know how to doctest random functions at the moment
     """
     import random
     res = 0
@@ -35,6 +40,8 @@ def create_name(length):
     :precondition: length must be a positive integer
     :postcondition: a name is generated
     :return: a name as a string in title case
+
+    # Do not know how to doctest random functions at the moment
     """
     if length <= 0:
         return
@@ -75,4 +82,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    doctest.testmod()
