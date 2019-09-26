@@ -17,7 +17,8 @@ def base_conversion():
 
     res = int(res)
 
-    print(f'The decimal number {num} in base {base} is {res}.')
+    # Print and pad 0's
+    print(f'The decimal number {num} in base {base} is {((4 - len(str(res))) * "0") + str(res)}.')
     return
 
 
@@ -31,8 +32,8 @@ def int_div_modulo(place, dividend, divisor):
     :precondition: place must be an integer
     :precondition: dividend must be an integer
     :precondition: divisor must be an integer
-    :postcondition: an integer of the place of a number in the specified base
-    :return: an integer of the base converted place
+    :postcondition: an integer of the decimal place as a string
+    :return: an string of the base converted place
     """
     # Strip the dividend to the desired form
     dividend = dividend // (divisor ** (place - 1))
