@@ -3,5 +3,5 @@ from time_calculator import time_calculator
 
 
 class TestTime_calculator(TestCase):
-    def test_time_calculator(self):
-        self.fail()
+
+    def test_time_calculator():
