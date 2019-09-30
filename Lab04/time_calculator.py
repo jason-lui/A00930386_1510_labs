@@ -32,13 +32,14 @@ def time_calculator(seconds):
 
 def time_converter(dividend, divisor):
     """
-    Returns the remainder
+    Return the remainder for a denomination of time.
 
-    :param divisor: an integer
+    Only allows days, hours, minutes and seconds.
     :param dividend: an integer
+    :param divisor: an integer
     :precondition: divisor must be an integer
-    :postcondition: calculate the integer division
-    :return: the number of times the divisor can divide the dividend
+    :postcondition: calculate the remainder
+    :return: the converted amount of time
 
     >>> time_converter(3000, "hours")
     0
