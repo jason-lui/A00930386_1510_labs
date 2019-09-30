@@ -100,13 +100,15 @@ if __name__ == "__main__":
     main()
 
 
-# Component(s) of computational thinking
+"""
+Component(s) of computational thinking
 
-# Abstraction and Generalization
-# convert_to_roman_numeral() uses the roman_denomination() abstract function to
-# break down a number by order of magnitudes.
-# I recognized that the process for converting and 1s, 10s, 100s were the same.
-# Each level represents the 4 and 9 cases in a similar way. The 1000s didn't use
-# the abstract function because we don't use denominations higher than that.
-# If the subset of numbers and the range of inputs were larger, the abstract function
-# can accept larger denominations for larger numbers.
+Abstraction and Generalization
+convert_to_roman_numeral() uses the roman_denomination() abstract function to
+break down a number by order of magnitudes.
+I recognized that the process for converting and 1s, 10s, 100s were the same.
+Each level represents the 4 and 9 cases in a similar way. The 1000s didn't use
+the abstract function because we don't use denominations higher than that.
+If the subset of numbers and the range of inputs were larger, the abstract function
+can accept larger denominations for larger numbers.
+"""

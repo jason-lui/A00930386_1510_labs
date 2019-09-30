@@ -67,9 +67,11 @@ if __name__ == '__main__':
     main()
 
 
-# Component(s) of computational thinking
+"""
+Component(s) of computational thinking
 
-# Decomposition
-# colour_mixer() uses decomposition by incorporating a is_primary() as a helper function.
-# is_primary() checks if the user input is a primary colour. This helper function can be
-# used in any program that requires a function to verify primary colours.
+Decomposition
+colour_mixer() uses decomposition by incorporating a is_primary() as a helper function.
+is_primary() checks if the user input is a primary colour. This helper function can be
+used in any program that requires a function to verify primary colours.
+"""

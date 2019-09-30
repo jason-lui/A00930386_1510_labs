@@ -60,9 +60,11 @@ if __name__ == "__main__":
     main()
 
 
-# Component(s) of computational thinking
+"""
+Component(s) of computational thinking
 
-# Decomposition
-# time_calculator() uses the helper function time_converter() to calculate the
-# number of days/hours/minutes given a number of seconds. The helper function
-# can be implemented into any program that requires a conversion of time if given seconds.
+Decomposition
+time_calculator() uses the helper function time_converter() to calculate the
+number of days/hours/minutes given a number of seconds. The helper function
+can be implemented into any program that requires a conversion of time if given seconds.
+"""
