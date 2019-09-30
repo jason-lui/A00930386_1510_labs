@@ -1,4 +1,5 @@
 from unittest import TestCase
+from time_calculator import time_converter
 
 
 class TestTime_converter(TestCase):
