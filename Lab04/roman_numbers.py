@@ -32,41 +32,49 @@ def convert_to_roman_numeral(positive_int):
     res += "M" * (positive_int // 1000)
 
     # Denominations of 100s
-    res += roman_denomination(positive_int, 100, "C", "D", "M")
+    res += roman_denomination(positive_int, 100)
 
     # Denominations of 10s
-    res += roman_denomination(positive_int, 10, "X", "L", "C")
+    res += roman_denomination(positive_int, 10)
 
     # Single digits
-    res += roman_denomination(positive_int, 1, "I", "V", "X")
+    res += roman_denomination(positive_int, 1)
 
     return res
 
 
-def roman_denomination(num, divisor, ones, fives, tens):
+def roman_denomination(num, divisor):
     """
     Generate Roman numeral representation for different orders of magnitude.
 
     :param num: an integer
     :param divisor: an integer
-    :param ones: a string
-    :param fives: a string
-    :param tens: a string
     :precondition: num must be an integer
     :precondition: divisor must be an integer that is a power of 10 (1, 10, 100...)
-    :precondition: ones must be a string representing divisor in Roman numerals
-    :precondition: fives must be a string representing divisor * 5 in Roman numerals
-    :precondition: tens must be a string representing divisor * 10 in Roman numerals
     :postcondition: produces the Roman numeral representation of a specified order of magnitude
     :return: the Roman numerals for an order of magnitude
 
-    >>> roman_denomination(4321, 100, "C", "D", "M")
+    >>> roman_denomination(4321, 100)
     'CCC'
-    >>> roman_denomination(4321, 10, "X", "L", "C")
+    >>> roman_denomination(4321, 10)
     'XX'
-    >>> roman_denomination(4321, 1, "I", "V", "X")
+    >>> roman_denomination(4321, 1)
     'I'
     """
+    # Select the denomination
+    if divisor == 1:
+        ones = "I"
+        fives = "V"
+        tens = "X"
+    elif divisor == 10:
+        ones = "X"
+        fives = "L"
+        tens = "C"
+    elif divisor == 100:
+        ones = "C"
+        fives = "D"
+        tens = "M"
+
     # Strip the number to the desired order of magnitude
     num %= (divisor * 10)
 
