@@ -68,8 +68,6 @@ def time_converter(dividend, divisor):
     return dividend
 
 
-
-
 def main():
     """
     Drive the program.
