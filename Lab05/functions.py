@@ -1,6 +1,6 @@
 def roll_die(number_of_rolls, number_of_sides):
     """
-    Roll a die a number of times and returns the total.
+    Roll a die a number of times and returns the total. !!!
 
     Return 0 if either parameter is not a positive integer.
     The die is rolled no more than 3 times.
@@ -26,3 +26,26 @@ def roll_die(number_of_rolls, number_of_sides):
 
     return res
 
+
+def choose_inventory(inventory, selection):
+    """
+    
+    :param inventory: 
+    :param selection: 
+    :return: !!!
+    """
+    import random
+    if not inventory and selection == 0:
+        return []
+    if selection < 0:
+        print("WARNING: The selection is negative.")
+        return []
+    if selection > len(inventory):
+        print("WARNING: The selection is larger than the size of the inventory.")
+        return sorted(inventory)
+    if selection == len(inventory):
+        return sorted(inventory)
+
+    # Generates a sorted selection of elements from inventory at random
+    random_list = random.sample(inventory, selection)
+    return sorted(random_list)
