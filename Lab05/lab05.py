@@ -126,9 +126,18 @@ def print_character(character):
     """
     print("Character:", character[0])
     print("\n")
+    print("--Attributes--")
     print("Strength:", character[1][1])
     print("Dexterity:", character[2][1])
     print("Constitution:", character[3][1])
     print("Intelligence:", character[4][1])
     print("Wisdom:", character[5][1])
     print("Charisma:", character[6][1])
+
+    # Character has an inventory
+    if len(character) == 8:
+        print("\n")
+        print("--Inventory--")
+        for item in character[7]:
+            print(item)
+    return
