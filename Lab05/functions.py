@@ -14,15 +14,15 @@ def roll_die(number_of_rolls, number_of_sides):
     # Do not know how to doctest random functions at the moment
     """
     import random
+
+    # Check for that inputs are positive integers
+    if number_of_rolls <= 0 or number_of_sides <= 0:
+        return 0
+
     res = 0
 
-    if number_of_rolls == 0 or number_of_sides == 0:
-        return
-    if number_of_rolls >= 1:
-        res += random.randint(1, number_of_sides)
-    if number_of_rolls >= 2:
-        res += random.randint(1, number_of_sides)
-    if number_of_rolls >= 3:
+    for i in range(number_of_rolls):
         res += random.randint(1, number_of_sides)
 
     return res
+
