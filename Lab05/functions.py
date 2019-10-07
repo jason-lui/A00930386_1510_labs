@@ -85,3 +85,4 @@ def generate_syllable():
     !!!
     :return:
     """
+    return generate_consonant() + generate_vowel()
