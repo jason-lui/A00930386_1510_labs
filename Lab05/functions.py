@@ -65,8 +65,8 @@ def generate_vowel():
     :return:
     """
     import random
-    vowel_unicodes = [97, 101, 105, 111, 117, 121]
-    return chr(random.randint(vowel_unicodes))
+    vowel_unicode = [97, 101, 105, 111, 117, 121]
+    return chr(random.randint(vowel_unicode))
 
 
 def generate_consonant():
@@ -74,6 +74,10 @@ def generate_consonant():
     !!!
     :return:
     """
+    import random
+    consonant_unicode = [98, 99, 100, 102, 103, 104, 106, 107, 108, 109,
+                         110, 112, 113, 114, 115, 116, 118, 119, 120, 122]
+    return chr(random.randint(consonant_unicode))
 
 
 def generate_syllable():
