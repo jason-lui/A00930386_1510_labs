@@ -94,8 +94,25 @@ def generate_syllable():
 
 def create_character(name_length):
     """
-
+    !!!
     :param name_length:
     :return:
     """
-    stats = []
+    char = []
+    name = generate_name(name_length // 2)
+    char.append(name)
+
+    strength = ['Strength', roll_die(3, 6)]
+    char.append(strength)
+    dexterity = ['Dexterity', roll_die(3, 6)]
+    char.append(dexterity)
+    constitution = ['Constitution', roll_die(3, 6)]
+    char.append(constitution)
+    intelligence = ['Intelligence', roll_die(3, 6)]
+    char.append(intelligence)
+    wisdom = ['Wisdom', roll_die(3, 6)]
+    char.append(wisdom)
+    charisma = ['Charisma', roll_die(3, 6)]
+    char.append(charisma)
+
+    return char
