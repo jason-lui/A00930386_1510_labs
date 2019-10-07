@@ -55,10 +55,10 @@ def main():
                  'Boots of Alacrity',
                  'Mercury Treads']
 
-    # Choose up to 8 items from the item list at random
+    # Choose 1 to 8 items from the item list at random
     print("Choosing starting items...")
     print("\n")
-    character_items = lab05.choose_inventory(item_list, random.randint(0, 8))
+    character_items = lab05.choose_inventory(item_list, random.randint(1, 8))
 
     # Add the item list to the character info
     character.append(character_items)
