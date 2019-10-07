@@ -60,7 +60,7 @@ def generate_name(syllables):
     name = ""
     for i in range(syllables):
         name += generate_syllable()
-    return name
+    return name.title()
 
 
 def generate_vowel():
@@ -102,17 +102,28 @@ def create_character(name_length):
     name = generate_name(name_length // 2)
     char.append(name)
 
-    strength = ['Strength', roll_die(3, 6)]
+    str = roll_die(3, 6)
+    strength = ['Strength', str]
     char.append(strength)
-    dexterity = ['Dexterity', roll_die(3, 6)]
+
+    dex = roll_die(3, 6)
+    dexterity = ['Dexterity', dex]
     char.append(dexterity)
-    constitution = ['Constitution', roll_die(3, 6)]
+
+    con = roll_die(3, 6)
+    constitution = ['Constitution', con]
     char.append(constitution)
-    intelligence = ['Intelligence', roll_die(3, 6)]
+
+    int = roll_die(3, 6)
+    intelligence = ['Intelligence', int]
     char.append(intelligence)
-    wisdom = ['Wisdom', roll_die(3, 6)]
+
+    wis = roll_die(3, 6)
+    wisdom = ['Wisdom', wis]
     char.append(wisdom)
-    charisma = ['Charisma', roll_die(3, 6)]
+
+    cha = roll_die(3, 6)
+    charisma = ['Charisma', cha]
     char.append(charisma)
 
     return char
@@ -124,7 +135,7 @@ def print_character(character):
     :param character:
     :return:
     """
-    print("Character:", character[0])
+    print(f"Your character's name is {character[0]}.")
     print("\n")
     print("--Attributes--")
     print("Strength:", character[1][1])
