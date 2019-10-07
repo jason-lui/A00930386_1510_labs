@@ -116,3 +116,19 @@ def create_character(name_length):
     char.append(charisma)
 
     return char
+
+
+def print_character(character):
+    """
+
+    :param character:
+    :return:
+    """
+    print("Character:", character[0])
+    print("\n")
+    print("Strength:", character[1][1])
+    print("Dexterity:", character[2][1])
+    print("Constitution:", character[3][1])
+    print("Intelligence:", character[4][1])
+    print("Wisdom:", character[5][1])
+    print("Charisma:", character[6][1])
