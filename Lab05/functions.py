@@ -29,10 +29,10 @@ def roll_die(number_of_rolls, number_of_sides):
 
 def choose_inventory(inventory, selection):
     """
-    
+    !!!
     :param inventory: 
     :param selection: 
-    :return: !!!
+    :return:
     """
     import random
     if not inventory and selection == 0:
@@ -49,3 +49,35 @@ def choose_inventory(inventory, selection):
     # Generates a sorted selection of elements from inventory at random
     random_list = random.sample(inventory, selection)
     return sorted(random_list)
+
+
+def generate_name(syllables):
+    """
+    !!!
+    :param syllables:
+    :return:
+    """
+
+
+def generate_vowel():
+    """
+    !!!
+    :return:
+    """
+    import random
+    vowel_unicodes = [97, 101, 105, 111, 117, 121]
+    return chr(random.randint(vowel_unicodes))
+
+
+def generate_consonant():
+    """
+    !!!
+    :return:
+    """
+
+
+def generate_syllable():
+    """
+    !!!
+    :return:
+    """
