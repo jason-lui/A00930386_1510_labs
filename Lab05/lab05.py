@@ -58,7 +58,9 @@ def generate_name(syllables):
     :return:
     """
     name = ""
-    for i in range(syllables):
+
+    # Generate n / 2 syllables to form a name of length n
+    for i in range(syllables // 2):
         name += generate_syllable()
     return name.title()
 
@@ -99,7 +101,7 @@ def create_character(name_length):
     :return:
     """
     char = []
-    name = generate_name(name_length // 2)
+    name = generate_name(name_length)
     char.append(name)
 
     str = roll_die(3, 6)
@@ -114,8 +116,8 @@ def create_character(name_length):
     constitution = ['Constitution', con]
     char.append(constitution)
 
-    int = roll_die(3, 6)
-    intelligence = ['Intelligence', int]
+    inn = roll_die(3, 6)
+    intelligence = ['Intelligence', inn]
     char.append(intelligence)
 
     wis = roll_die(3, 6)
