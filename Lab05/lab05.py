@@ -1,30 +1,29 @@
+import random
+
+
 def roll_die(number_of_rolls, number_of_sides):
     """
-    Roll a die a number of times and returns the total. !!!
+    Roll a die a number of times and returns the total.
 
     Return 0 if either parameter is not a positive integer.
-    The die is rolled no more than 3 times.
-    :param number_of_rolls: an integer
-    :param number_of_sides: an integer
-    :precondition: number_of_rolls must be positive
-    :precondition: number_of_sides must be positive
-    :postcondition: the sum from the die rolls will be calculated
+    :param number_of_rolls: a positive integer
+    :param number_of_sides: a positive integer
+    :precondition: number_of_rolls must be a positive integer
+    :precondition: number_of_sides must be a positive integer
+    :postcondition: the sum from the die rolls will be totaled
     :return: the total of the die rolls
-
-    # Do not know how to doctest random functions at the moment
     """
-    import random
+    total = 0
 
     # Check for that inputs are positive integers
     if number_of_rolls <= 0 or number_of_sides <= 0:
-        return 0
+        return total
 
-    res = 0
-
+    # Roll the die the specified times and add rolls to total
     for i in range(number_of_rolls):
-        res += random.randint(1, number_of_sides)
+        total += random.randint(1, number_of_sides)
 
-    return res
+    return total
 
 
 def choose_inventory(inventory, selection):
@@ -34,7 +33,6 @@ def choose_inventory(inventory, selection):
     :param selection: 
     :return:
     """
-    import random
     if not inventory and selection == 0:
         return []
     if selection < 0:
@@ -70,7 +68,6 @@ def generate_vowel():
     !!!
     :return:
     """
-    import random
     vowel_unicode = [97, 101, 105, 111, 117, 121]
     return chr(random.choice(vowel_unicode))
 
@@ -80,7 +77,6 @@ def generate_consonant():
     !!!
     :return:
     """
-    import random
     consonant_unicode = [98, 99, 100, 102, 103, 104, 106, 107, 108, 109,
                          110, 112, 113, 114, 115, 116, 118, 119, 120, 122]
     return chr(random.choice(consonant_unicode))
