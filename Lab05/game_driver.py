@@ -4,17 +4,19 @@ import random
 
 def main():
     """
+    Create a character for Dungeons and Dragons.
 
-    :return:
+    User inputs the length of the name to be generated
+    Attributes and inventory are rolled.
+    :postcondition: character name, attributes, and inventory will be printed
     """
     character = []
 
     # Ask user for the length of their username
     name_length = int(input("Enter the length of your username: "))
-    name_length = name_length
     name = lab05.generate_name(name_length)
 
-    # Add the username to character
+    # Add the username to character info
     character.append(name)
 
     # Inform the user that their stats are being rolled
@@ -28,8 +30,9 @@ def main():
     wis = lab05.roll_die(3, 6)
     cha = lab05.roll_die(3, 6)
     print(f"You rolled: {str}, {dex}, {con}, {inn}, {wis}, {cha}!")
+    print("\n")
 
-    # Add the stat mini-lists to character in the correct order
+    # Add the stat mini-lists to character info in the correct order
     character.append(['Strength', str])
     character.append(['Dexterity', dex])
     character.append(['Constitution', con])
@@ -47,7 +50,7 @@ def main():
                  'Banshee\'s Veil',
                  'Abyssal\' Mask',
                  'Infinity Edge',
-                 'The Bloodthirster'
+                 'The Bloodthirster',
                  'Phantom Dancer',
                  'Rapidfire Cannon',
                  'Boots of Lucidity',
@@ -55,10 +58,18 @@ def main():
                  'Boots of Alacrity',
                  'Mercury Treads']
 
-    # Choose 1 to 8 items from the item list at random
-    print("Choosing starting items...")
+    # Show items in the store
+    print("--Available items in the store--")
+    for item in item_list:
+        print(item)
     print("\n")
-    character_items = lab05.choose_inventory(item_list, random.randint(1, 8))
+
+    # Ask user for how many items they would like
+    num_of_items = int(input("How many items would you like?: "))
+    print("\n")
+    print("----------------------------------------------------")
+    print("\n")
+    character_items = lab05.choose_inventory(item_list, num_of_items)
 
     # Add the item list to the character info
     character.append(character_items)
