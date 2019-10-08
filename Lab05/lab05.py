@@ -41,10 +41,10 @@ def choose_inventory(inventory, selection):
     if not inventory and selection == 0:
         return []
     if selection < 0:
-        print("WARNING: The selection is negative.")
+        print("WARNING: The number of items selected is negative.")
         return []
     if selection > len(inventory):
-        print("WARNING: The selection is larger than the size of the inventory.")
+        print("WARNING: The number of items selected is larger than the size of the inventory.")
         return sorted(inventory)
     if selection == len(inventory):
         return sorted(inventory)
@@ -116,35 +116,35 @@ def create_character(name_length):
     :postcondition: a character's name, and attributes will be generated
     :return: a list containing a character's name and attributes
     """
-    char = []
+    char_info = []
     name = generate_name(name_length)
-    char.append(name)
+    char_info.append(name)
 
-    str = roll_die(3, 6)
-    strength = ['Strength', str]
-    char.append(strength)
+    str_stat = roll_die(3, 6)
+    strength = ['Strength', str_stat]
+    char_info.append(strength)
 
-    dex = roll_die(3, 6)
-    dexterity = ['Dexterity', dex]
-    char.append(dexterity)
+    dex_stat = roll_die(3, 6)
+    dexterity = ['Dexterity', dex_stat]
+    char_info.append(dexterity)
 
-    con = roll_die(3, 6)
-    constitution = ['Constitution', con]
-    char.append(constitution)
+    con_stat = roll_die(3, 6)
+    constitution = ['Constitution', con_stat]
+    char_info.append(constitution)
 
-    inn = roll_die(3, 6)
-    intelligence = ['Intelligence', inn]
-    char.append(intelligence)
+    int_stat = roll_die(3, 6)
+    intelligence = ['Intelligence', int_stat]
+    char_info.append(intelligence)
 
-    wis = roll_die(3, 6)
-    wisdom = ['Wisdom', wis]
-    char.append(wisdom)
+    wis_stat = roll_die(3, 6)
+    wisdom = ['Wisdom', wis_stat]
+    char_info.append(wisdom)
 
-    cha = roll_die(3, 6)
-    charisma = ['Charisma', cha]
-    char.append(charisma)
+    cha_stat = roll_die(3, 6)
+    charisma = ['Charisma', cha_stat]
+    char_info.append(charisma)
 
-    return char
+    return char_info
 
 
 def print_character(character):
@@ -163,10 +163,12 @@ def print_character(character):
     print("Wisdom:", character[5][1])
     print("Charisma:", character[6][1])
 
-    # Character has an inventory
+    # If the character has an inventory
     if len(character) == 8:
-        print("\n")
-        print("--Inventory--")
-        for item in character[7]:
-            print(item)
+        # If the inventory is not empty (i.e. has items)
+        if character[7]:
+            print("\n")
+            print("--Inventory--")
+            for item in character[7]:
+                print(item)
     return

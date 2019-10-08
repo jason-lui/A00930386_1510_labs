@@ -23,22 +23,22 @@ def main():
     print("Rolling for strength, dexterity, constitution, intelligence, wisdom, charisma...")
 
     # Roll character stats
-    str = lab05.roll_die(3, 6)
-    dex = lab05.roll_die(3, 6)
-    con = lab05.roll_die(3, 6)
-    inn = lab05.roll_die(3, 6)
-    wis = lab05.roll_die(3, 6)
-    cha = lab05.roll_die(3, 6)
-    print(f"You rolled: {str}, {dex}, {con}, {inn}, {wis}, {cha}!")
+    str_stat = lab05.roll_die(3, 6)
+    dex_stat = lab05.roll_die(3, 6)
+    con_stat = lab05.roll_die(3, 6)
+    int_stat = lab05.roll_die(3, 6)
+    wis_stat = lab05.roll_die(3, 6)
+    cha_stat = lab05.roll_die(3, 6)
+    print(f"You rolled: {str_stat}, {dex_stat}, {con_stat}, {int_stat}, {wis_stat}, {cha_stat}!")
     print("\n")
 
     # Add the stat mini-lists to character info in the correct order
-    character.append(['Strength', str])
-    character.append(['Dexterity', dex])
-    character.append(['Constitution', con])
-    character.append(['Intelligence', inn])
-    character.append(['Wisdom', wis])
-    character.append(['Charisma', cha])
+    character.append(['Strength', str_stat])
+    character.append(['Dexterity', dex_stat])
+    character.append(['Constitution', con_stat])
+    character.append(['Intelligence', int_stat])
+    character.append(['Wisdom', wis_stat])
+    character.append(['Charisma', cha_stat])
 
     # A list of possible items in the game
     item_list = ['Rabadon\'s Deathcap',
@@ -65,14 +65,16 @@ def main():
     print("\n")
 
     # Ask user for how many items they would like
-    num_of_items = int(input("How many items would you like?: "))
+    num_of_items = int(input("How many items would you like? (MAX 16): "))
     print("\n")
     print("----------------------------------------------------")
     print("\n")
-    character_items = lab05.choose_inventory(item_list, num_of_items)
 
-    # Add the item list to the character info
+    # Choose items for the character's inventory
+    character_items = lab05.choose_inventory(item_list, num_of_items)
     character.append(character_items)
+
+    # Print character info
     lab05.print_character(character)
     return
 
