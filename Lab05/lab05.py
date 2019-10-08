@@ -6,12 +6,12 @@ def roll_die(number_of_rolls, number_of_sides):
     Roll a die a number of times and returns the total.
 
     Return 0 if either parameter is not a positive integer.
-    :param number_of_rolls: a positive integer
-    :param number_of_sides: a positive integer
+    :param number_of_rolls: an integer
+    :param number_of_sides: an integer
     :precondition: number_of_rolls must be a positive integer
     :precondition: number_of_sides must be a positive integer
     :postcondition: the sum from the die rolls will be totaled
-    :return: the total of the die rolls
+    :return: the total of the die rolls as an integer
     """
     total = 0
 
@@ -28,10 +28,15 @@ def roll_die(number_of_rolls, number_of_sides):
 
 def choose_inventory(inventory, selection):
     """
-    !!!
-    :param inventory: 
-    :param selection: 
-    :return:
+    Generate random items from an inventory.
+
+    Return an empty list if preconditions are not met.
+    :param inventory: an integer
+    :param selection: an integer
+    :precondition: inventory must be a positive integer
+    :precondition: selection must be a positive integer
+    :postcondition: a list of random items from the inventory will be generated
+    :return: a sorted list of random items
     """
     if not inventory and selection == 0:
         return []
@@ -51,13 +56,17 @@ def choose_inventory(inventory, selection):
 
 def generate_name(syllables):
     """
-    !!!
-    :param syllables:
-    :return:
+    Generate a name containing the specified number of syllables.
+
+    Only names of even length are generated.
+    :param syllables: an integer
+    :precondition: syllables must be a positive integer
+    :postcondition: a name with the correct number of syllables will be generated
+    :return: the string with the correct number of syllables in title case
     """
     name = ""
 
-    # Generate n / 2 syllables to form a name of length n
+    # Generate n // 2 syllables to form a name of length n
     for i in range(syllables // 2):
         name += generate_syllable()
     return name.title()
@@ -65,8 +74,10 @@ def generate_name(syllables):
 
 def generate_vowel():
     """
-    !!!
-    :return:
+    Generate a random vowel (y included).
+
+    :postcondition: a single random vowel will be generated
+    :return: the vowel as a string
     """
     vowel_unicode = [97, 101, 105, 111, 117, 121]
     return chr(random.choice(vowel_unicode))
@@ -74,27 +85,36 @@ def generate_vowel():
 
 def generate_consonant():
     """
-    !!!
-    :return:
+    Generate a random consonant.
+
+    :postcondition: a single random consonant will be generated
+    :return: the random consonant as a string
     """
     consonant_unicode = [98, 99, 100, 102, 103, 104, 106, 107, 108, 109,
-                         110, 112, 113, 114, 115, 116, 118, 119, 120, 122]
+                         110, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122]
     return chr(random.choice(consonant_unicode))
 
 
 def generate_syllable():
     """
-    !!!
-    :return:
+    Generate a syllable containing a random consonant preceding a random vowel.
+
+    :postcondition: a random consonant and a random vowel will be returned
+    :return: a string containing a consonant and a vowel
     """
     return generate_consonant() + generate_vowel()
 
 
 def create_character(name_length):
     """
-    !!!
-    :param name_length:
-    :return:
+    Generate a character's name and attributes.
+
+    Attributes are strength, dexterity, constitution, intelligence, wisdom, and charisma.
+    Attributes are rolled using 3 6-sided dice.
+    :param name_length: an integer
+    :precondition: name_length must be an even positive integer
+    :postcondition: a character's name, and attributes will be generated
+    :return: a list containing a character's name and attributes
     """
     char = []
     name = generate_name(name_length)
