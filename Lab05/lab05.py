@@ -152,22 +152,16 @@ def print_character(character):
     :param character:
     :return:
     """
-    print(f"Your character's name is {character[0]}.")
+    print(f"Your character's name is {character[0]}.\n")
     print("\n")
     print("--Attributes--")
-    print("Strength:", character[1][1])
-    print("Dexterity:", character[2][1])
-    print("Constitution:", character[3][1])
-    print("Intelligence:", character[4][1])
-    print("Wisdom:", character[5][1])
-    print("Charisma:", character[6][1])
+    for stat in character[1:7]:
+        print(f"{stat[0]}: {stat[1]}")
 
-    # If the character has an inventory
-    if len(character) == 8:
-        # If the inventory is not empty (i.e. has items)
-        if character[7]:
-            print("\n")
-            print("--Inventory--")
-            for item in character[7]:
-                print(item)
+    # If the character has an inventory and it is not empty
+    if len(character) == 8 and character[-1]:
+        print("\n")
+        print("--Inventory--")
+        for item in character[-1]:
+            print(item)
     return
