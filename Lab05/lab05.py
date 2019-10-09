@@ -58,7 +58,6 @@ def generate_name(syllables):
     """
     Generate a name containing the specified number of syllables.
 
-    Only names of even length are generated.
     :param syllables: an integer
     :precondition: syllables must be a positive integer
     :postcondition: a name with the correct number of syllables will be generated
@@ -66,8 +65,8 @@ def generate_name(syllables):
     """
     name = ""
 
-    # Generate n // 2 syllables to form a name of length n
-    for i in range(syllables // 2):
+    # Generate name with the specified number of syllables
+    for i in range(syllables):
         name += generate_syllable()
     return name.title()
 
@@ -112,7 +111,7 @@ def create_character(name_length):
     Attributes are strength, dexterity, constitution, intelligence, wisdom, and charisma.
     Attributes are rolled using 3 6-sided dice.
     :param name_length: an integer
-    :precondition: name_length must be an even positive integer
+    :precondition: name_length must be a positive integer
     :postcondition: a character's name, and attributes will be generated
     :return: a list containing a character's name and attributes
     """
