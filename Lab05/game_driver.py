@@ -11,7 +11,8 @@ def main():
     """
 
     # Ask user for the length of their username
-    name_length = int(input("Enter the length of your username: "))
+    name_length = lab05.roll_die(1, 6)
+    print(f"You rolled {name_length}! your name will be {name_length * 2} characters long.\n")
 
     # create_character() calls roll_die() and create_name()
     # create_name() calls generate_syllable()
