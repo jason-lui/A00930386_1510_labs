@@ -148,9 +148,13 @@ def create_character(name_length):
 
 def print_character(character):
     """
+    Print the information stored within a character info list.
 
-    :param character:
-    :return:
+    Index 0 is the character name. Indices 1 to 6 are the stat mini-lists.
+    Also accepts an inventory at the 7th index.
+    :param character: a list containing the character name, stat mini-lists (and inventory)
+    :precondition: character must be a properly formatted list
+    :postcondition: character name, stats and inventory will be printed
     """
     print(f"Your character's name is {character[0]}.\n")
     print("\n")
