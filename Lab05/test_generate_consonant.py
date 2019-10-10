@@ -4,8 +4,6 @@ from lab05 import generate_consonant
 
 
 class TestGenerate_consonant(TestCase):
-    [98, 99, 100, 102, 103, 104, 106, 107, 108, 109,
-     110, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122]
 
     @patch("random.choice", return_value=98)
     def test_generate_vowel_b(self, mock_output):
