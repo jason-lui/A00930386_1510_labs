@@ -157,15 +157,13 @@ def print_character(character):
     :postcondition: character name, stats and inventory will be printed
     """
     print(f"Your character's name is {character[0]}.\n")
-    print("\n")
     print("--Attributes--")
     for stat in character[1:7]:
         print(f"{stat[0]}: {stat[1]}")
 
     # If the character has an inventory and it is not empty
     if len(character) == 8 and character[-1]:
-        print("\n")
-        print("--Inventory--")
+        print("\n--Inventory--")
         for item in character[-1]:
             print(item)
     return
