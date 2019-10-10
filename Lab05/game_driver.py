@@ -9,35 +9,18 @@ def main():
     Attributes and inventory are rolled.
     :postcondition: character name, attributes, and inventory will be printed
     """
-    character = []
 
     # Ask user for the length of their username
     name_length = int(input("Enter the length of your username: "))
-    name = lab05.generate_name(name_length)
 
-    # Add the username to character info
-    character.append(name)
-
+    # create_character calls create_name() and rolls stats
     # Inform the user that their stats are being rolled
     print("Rolling for strength, dexterity, constitution, intelligence, wisdom, charisma...")
+    character = lab05.create_character(name_length)
 
-    # Roll character stats
-    str_stat = lab05.roll_die(3, 6)
-    dex_stat = lab05.roll_die(3, 6)
-    con_stat = lab05.roll_die(3, 6)
-    int_stat = lab05.roll_die(3, 6)
-    wis_stat = lab05.roll_die(3, 6)
-    cha_stat = lab05.roll_die(3, 6)
-    print(f"You rolled: {str_stat}, {dex_stat}, {con_stat}, {int_stat}, {wis_stat}, {cha_stat}!")
+    # Show rolls
+    print(f"You rolled: {character[1][1]}, {character[2][1]}, {character[3][1]}, {character[4][1]}, {character[5][1]}, {character[6][1]}!")
     print("\n")
-
-    # Add the stat mini-lists to character info in the correct order
-    character.append(['Strength', str_stat])
-    character.append(['Dexterity', dex_stat])
-    character.append(['Constitution', con_stat])
-    character.append(['Intelligence', int_stat])
-    character.append(['Wisdom', wis_stat])
-    character.append(['Charisma', cha_stat])
 
     # A list of possible items in the game
     item_list = ['Rabadon\'s Deathcap',
@@ -67,7 +50,6 @@ def main():
     num_of_items = int(input("How many items would you like? (MAX 16): "))
     print("\n")
     print("----------------------------------------------------")
-    print("\n")
 
     # Choose items for the character's inventory
     character_items = lab05.choose_inventory(item_list, num_of_items)
