@@ -13,7 +13,9 @@ def main():
     # Ask user for the length of their username
     name_length = int(input("Enter the length of your username: "))
 
-    # create_character calls create_name() and rolls stats
+    # create_character() calls roll_die() and create_name()
+    # create_name() calls generate_syllable()
+    # generate_syllable() calls generate_consonant() and generate_vowel()
     # Inform the user that their stats are being rolled
     print("Rolling for strength, dexterity, constitution, intelligence, wisdom, charisma...")
     character = lab05.create_character(name_length)
@@ -51,11 +53,11 @@ def main():
     print("\n")
     print("----------------------------------------------------")
 
-    # Choose items for the character's inventory
+    # Choose items for the character's inventory using choose_inventory()
     character_items = lab05.choose_inventory(item_list, num_of_items)
     character.append(character_items)
 
-    # Print character info
+    # Print character info using print_character()
     lab05.print_character(character)
     return
 
