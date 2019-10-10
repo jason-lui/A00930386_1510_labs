@@ -7,16 +7,20 @@ class TestGenerate_syllable(TestCase):
 
     @patch("random.choice", side_effect=[98, 97])
     def test_generate_syllable_ba(self, mock_letter):
-        self.assertEqual("ba", generate_syllable())
+        expected_syllable = "ba"
+        self.assertEqual(expected_syllable, generate_syllable())
 
     @patch("random.choice", side_effect=[122, 97])
     def test_generate_syllable_za(self, mock_letter):
-        self.assertEqual("za", generate_syllable())
+        expected_syllable = "za"
+        self.assertEqual(expected_syllable, generate_syllable())
 
     @patch("random.choice", side_effect=[122, 121])
     def test_generate_syllable_zy(self, mock_letter):
-        self.assertEqual("zy", generate_syllable())
+        expected_syllable = "zy"
+        self.assertEqual(expected_syllable, generate_syllable())
 
     @patch("random.choice", side_effect=[121, 121])
     def test_generate_syllable_yy(self, mock_letter):
-        self.assertEqual("yy", generate_syllable())
+        expected_syllable = "yy"
+        self.assertEqual(expected_syllable, generate_syllable())
