@@ -37,6 +37,17 @@ def choose_inventory(inventory, selection):
     :precondition: selection must be a positive integer
     :postcondition: a list of random items from the inventory will be generated
     :return: a sorted list of random items
+
+    >>> choose_inventory([], 0)
+    []
+    >>> choose_inventory([], 1)
+    WARNING: The number of items selected is larger than the size of the inventory.
+    []
+    >>> choose_inventory(['Boots of Lucidity'], -1)
+    WARNING: The number of items selected is negative.
+    []
+    >>> choose_inventory(['Boots of Lucidity'], 0)
+    []
     """
     if not inventory and selection == 0:
         return []
@@ -155,6 +166,8 @@ def print_character(character):
     :param character: a list containing the character name, stat mini-lists (and inventory)
     :precondition: character must be a properly formatted list
     :postcondition: character name, stats and inventory will be printed
+
+    >>> print_character()
     """
     print(f"Your character's name is {character[0]}.\n")
     print("--Attributes--")
@@ -170,3 +183,8 @@ def print_character(character):
         else: # No items in the inventory
             print("You have no items...")
     return
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()

@@ -24,7 +24,7 @@ class TestChoose_inventory(TestCase):
 
     @patch("sys.stdout", new_callable=io.StringIO)
     @patch("random.sample", side_effect=[[], [], [], []])
-    def test_choose_inventory_0_n1_list(self, mock_items, mock_output):
+    def test_choose_inventory_0_n1_value(self, mock_items, mock_output):
         inventory = []
         selection = -1
         expected = []
@@ -41,7 +41,7 @@ class TestChoose_inventory(TestCase):
 
     @patch("sys.stdout", new_callable=io.StringIO)
     @patch("random.sample", side_effect=[[], [], [], []])
-    def test_choose_inventory_4_n1(self, mock_items, mock_output):
+    def test_choose_inventory_4_n1_value(self, mock_items, mock_output):
         inventory = ['Rabadon\'s Deathcap', 'Abyssal\' Mask', 'Rapidfire Cannon', 'Boots of Lucidity']
         selection = -1
         expected = []
@@ -58,7 +58,7 @@ class TestChoose_inventory(TestCase):
 
     @patch("sys.stdout", new_callable=io.StringIO)
     @patch("random.sample", side_effect=[[], [], [], []])
-    def test_choose_inventory_0_4(self, mock_items, mock_output):
+    def test_choose_inventory_0_4_value(self, mock_items, mock_output):
         inventory = []
         selection = 4
         expected = []
