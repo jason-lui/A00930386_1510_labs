@@ -75,7 +75,7 @@ def generate_vowel():
     """
     Generate a random vowel (y included).
 
-    :postcondition: a single random vowel will be generated
+    :postcondition: a single random vowel will be generated in lower case
     :return: the vowel as a string
     """
     vowel_unicode = [97, 101, 105, 111, 117, 121]
@@ -86,7 +86,7 @@ def generate_consonant():
     """
     Generate a random consonant.
 
-    :postcondition: a single random consonant will be generated
+    :postcondition: a single random consonant will be generated in lower case
     :return: the random consonant as a string
     """
     consonant_unicode = [98, 99, 100, 102, 103, 104, 106, 107, 108, 109,
@@ -99,7 +99,7 @@ def generate_syllable():
     Generate a syllable containing a random consonant preceding a random vowel.
 
     :postcondition: a random consonant and a random vowel will be returned
-    :return: a string containing a consonant and a vowel
+    :return: a string containing a consonant and a vowel in lower case
     """
     return generate_consonant() + generate_vowel()
 
