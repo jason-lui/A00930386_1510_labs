@@ -89,8 +89,8 @@ def generate_vowel():
     :postcondition: a single random vowel will be generated in lower case
     :return: the vowel as a string
     """
-    vowel_unicode = [97, 101, 105, 111, 117, 121]
-    return chr(random.choice(vowel_unicode))
+    vowels = ["a", "e", "i", "o", "u", "y"]
+    return random.choice(vowels)
 
 
 def generate_consonant():
@@ -100,9 +100,8 @@ def generate_consonant():
     :postcondition: a single random consonant will be generated in lower case
     :return: the random consonant as a string
     """
-    consonant_unicode = [98, 99, 100, 102, 103, 104, 106, 107, 108, 109,
-                         110, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122]
-    return chr(random.choice(consonant_unicode))
+    consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+    return random.choice(consonants)
 
 
 def generate_syllable():
