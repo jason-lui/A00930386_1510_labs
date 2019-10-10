@@ -28,7 +28,7 @@ def roll_die(number_of_rolls, number_of_sides):
 
 def choose_inventory(inventory, selection):
     """
-    Generate random items from an inventory.
+    Choose random items from an inventory.
 
     Return an empty list if preconditions are not met.
     :param inventory: an integer
