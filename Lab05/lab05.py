@@ -162,8 +162,11 @@ def print_character(character):
         print(f"{stat[0]}: {stat[1]}")
 
     # If the character has an inventory and it is not empty
-    if len(character) == 8 and character[-1]:
+    if len(character) == 8:
         print("\n--Inventory--")
-        for item in character[-1]:
-            print(item)
+        if character[-1]:
+            for item in character[-1]:
+                print(item)
+        else:
+            print("You have no items...")
     return
