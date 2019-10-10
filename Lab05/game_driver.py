@@ -11,8 +11,7 @@ def main():
     """
 
     # Ask user for the length of their username
-    name_length = lab05.roll_die(1, 6)
-    print(f"You rolled {name_length}! your name will be {name_length * 2} characters long.\n")
+    name_length = int(input("Enter the length of your username: "))
 
     # create_character() calls roll_die() and create_name()
     # create_name() calls generate_syllable()
@@ -58,7 +57,7 @@ def main():
     character_items = lab05.choose_inventory(item_list, num_of_items)
     character.append(character_items)
 
-    # Print character info using print_character()
+    # Print character info
     lab05.print_character(character)
     return
 
