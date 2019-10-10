@@ -22,3 +22,9 @@ class TestGenerate_name(TestCase):
         syllables = 3
         expected_name = "Badehi"
         self.assertEqual(expected_name, generate_name(syllables))
+
+
+
+
+    # def test_generate_name_2(self):
+    # def test_generate_name_3(self):
