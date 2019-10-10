@@ -1,5 +1,4 @@
 import lab05
-import random
 
 
 def main():
