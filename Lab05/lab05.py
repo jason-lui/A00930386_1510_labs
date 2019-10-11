@@ -1,4 +1,5 @@
 import random
+import doctest
 
 
 def roll_die(number_of_rolls, number_of_sides):
@@ -100,7 +101,8 @@ def generate_consonant():
     :postcondition: a single random consonant will be generated in lower case
     :return: the random consonant as a string
     """
-    consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+    consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
+                  "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
     return random.choice(consonants)
 
 
@@ -228,5 +230,4 @@ def print_character(character):
 
 
 if __name__ == '__main__':
-    import doctest
     doctest.testmod()
