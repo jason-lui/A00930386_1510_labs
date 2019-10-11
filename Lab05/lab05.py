@@ -166,7 +166,50 @@ def print_character(character):
     :precondition: character must be a properly formatted list
     :postcondition: character name, stats and inventory will be printed
 
-    >>> print_character()
+    # This character has no bag
+    >>> print_character(["Liziqi", ["Strength", 18], ["Dexterity", 18], ["Constitution", 18],
+    ... ["Intelligence", 18], ['Wisdom', 18], ["Charisma", 18]])
+    Your character's name is Liziqi.
+    <BLANKLINE>
+    --Attributes--
+    Strength: 18
+    Dexterity: 18
+    Constitution: 18
+    Intelligence: 18
+    Wisdom: 18
+    Charisma: 18
+
+    # This character has a bag but no items
+    >>> print_character(["Liziqi", ["Strength", 18], ["Dexterity", 18], ["Constitution", 18],
+    ... ["Intelligence", 18], ['Wisdom', 18], ["Charisma", 18], []])
+    Your character's name is Liziqi.
+    <BLANKLINE>
+    --Attributes--
+    Strength: 18
+    Dexterity: 18
+    Constitution: 18
+    Intelligence: 18
+    Wisdom: 18
+    Charisma: 18
+    <BLANKLINE>
+    --Inventory--
+    You have no items...
+
+    # This character has a bag with items
+    >>> print_character(["Liziqi", ["Strength", 18], ["Dexterity", 18], ["Constitution", 18],
+    ... ["Intelligence", 18], ['Wisdom', 18], ["Charisma", 18], ["Boots of Swiftness, Rabadon's Deathcap"]])
+    Your character's name is Liziqi.
+    <BLANKLINE>
+    --Attributes--
+    Strength: 18
+    Dexterity: 18
+    Constitution: 18
+    Intelligence: 18
+    Wisdom: 18
+    Charisma: 18
+    <BLANKLINE>
+    --Inventory--
+    Boots of Swiftness, Rabadon's Deathcap
     """
     print(f"Your character's name is {character[0]}.\n")
     print("--Attributes--")
