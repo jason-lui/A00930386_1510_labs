@@ -13,6 +13,10 @@ class TestGenerate_syllable(TestCase):
         self.assertEqual(2, len(syllable))
 
     # Make sure that the consonant appears before the vowel
-    def test_generate_syllable_true(self):
+    def test_generate_syllable_order(self):
         syllable = generate_syllable()
         self.assertTrue(syllable[0] in consonants and syllable[1] in vowels)
+
+    # Make sure that syllables contain letters only
+    def test_generate_syllable_alpha(self):
+        self.assertTrue(generate_syllable().isalpha())
