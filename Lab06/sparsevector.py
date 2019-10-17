@@ -23,17 +23,23 @@ def sparse_add(vector_1, vector_2):
     {}
     >>> sparse_add({}, {0: 1, 2: 2, 4: 3})
     {0: 1, 2: 2, 4: 3}
-    >>> sparse_add({0: 1, 2: 2, 4: 3}, {0: 1, 1: 3, 2: 2, 3: 3, 4: 3, 5: 9})
-    {0: 2, 2: 4, 4: 6, 1: 3, 3: 3, 5: 9}
+    >>> sparse_add({0: 1, 2: 2, 99: 3}, {0: 1, 1: 3, 2: 2, 3: 3, 4: 3, 99: 9})
+    {0: 2, 2: 4, 99: 12, 1: 3, 3: 3, 4: 3}
     """
-    # Put all entries into vector_1
+    new_dict = {}
+
+    # Put all entries from vector_1 into the new dictionary
+    for key, value in vector_1.items():
+        new_dict[key] = value
+
+    # Add to or create keys from vector_2
     for key in vector_2:
         if key in vector_1:
-            vector_1[key] += vector_2[key]
+            new_dict[key] += vector_2[key]
         else:
-            vector_1[key] = vector_2[key]
+            new_dict[key] = vector_2[key]
 
-    return vector_1
+    return new_dict
 
 
 if __name__ == '__main__':

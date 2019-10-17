@@ -29,9 +29,9 @@ class TestSparse_add(TestCase):
         self.assertEqual(expected, sparse_add(v1, v2))
 
     def test_sparse_no_matching_indices(self):
-        v1 = {1: 1, 2: 2, 98: 3}
-        v2 = {4: 4, 5: 5, 99: 6}
-        expected = {1: 1, 2: 2, 4: 4, 5: 5, 98: 3, 99: 6}
+        v1 = {1: 1, 2: 2, 99: 3}
+        v2 = {4: 4, 5: 5, 98: 6}
+        expected = {1: 1, 2: 2, 4: 4, 5: 5, 98: 6, 99: 3}
         self.assertEqual(expected, sparse_add(v1, v2))
 
     def test_sparse_some_matching_indices(self):
