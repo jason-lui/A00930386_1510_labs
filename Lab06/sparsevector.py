@@ -1,6 +1,5 @@
 import doctest
 
-
 """
 We cannot return the length of a sparse vector that is formatted as a dictionary.
 The dictionary contains only non-zero values, so it does not show how many zeroes there were
@@ -25,22 +24,16 @@ def sparse_add(vector_1, vector_2):
     >>> sparse_add({}, {0: 1, 2: 2, 4: 3})
     {0: 1, 2: 2, 4: 3}
     >>> sparse_add({0: 1, 2: 2, 4: 3}, {0: 1, 1: 3, 2: 2, 3: 3, 4: 3, 5: 9})
-    {0: 2, 1: 3, 2: 4, 3: 3, 4: 6, 5: 9}
+    {0: 2, 2: 4, 4: 6, 1: 3, 3: 3, 5: 9}
     """
-    new_dict = {}
-
     # Put all entries into vector_1
-    for key in vector_2.keys():
+    for key in vector_2:
         if key in vector_1:
             vector_1[key] += vector_2[key]
         else:
             vector_1[key] = vector_2[key]
 
-    # Reorder the entries in memory
-    for key in sorted(vector_1.keys()):
-        new_dict[key] = vector_1[key]
-
-    return new_dict
+    return vector_1
 
 
 if __name__ == '__main__':
