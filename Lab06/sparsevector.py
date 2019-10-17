@@ -2,9 +2,12 @@ import doctest
 
 """
 We cannot return the length of a sparse vector that is formatted as a dictionary.
-The dictionary contains only non-zero values, so it does not show how many zeroes there were
-in the original sparse vector. We need to ask the team lead to create a new dictionary entry
-that represents the total number of zeroes in the original sparse vector.
+The dictionary only tracks non-zero values, so it does not show how many zeroes there were
+in the original sparse vector. We need to ask the find out the number of zeroes
+in the original sparse vector. One way to do this is to change how we store sparse vectors.
+We can add another entry that tracks the total number of zeroes. For example,
+the sparse vector [1, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0] would be {0: 1 , 6:1, 8: 2, "Zeroes": 11}.
+We can determine the length of the sparse vector since we have full information of the original vector.
 """
 
 
