@@ -20,9 +20,11 @@ def sparse_add(vector_1, vector_2):
     :postcondition: the vectors will be added together
     :return: a dictionary representing the combined vectors.
 
-    >>> sparse_add({}, {0:1, 2:2, 4:3})
+    >>> sparse_add({}, {})
+    {}
+    >>> sparse_add({}, {0: 1, 2: 2, 4: 3})
     {0: 1, 2: 2, 4: 3}
-    >>> sparse_add({0:1, 2:2, 4:3}, {0:1, 1:3, 2:2, 3:3, 4:3, 5:9})
+    >>> sparse_add({0: 1, 2: 2, 4: 3}, {0: 1, 1: 3, 2: 2, 3: 3, 4: 3, 5: 9})
     {0: 2, 1: 3, 2: 4, 3: 3, 4: 6, 5: 9}
     """
     new_dict = {}
