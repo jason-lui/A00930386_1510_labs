@@ -42,7 +42,9 @@ def sparse_add(vector_1, vector_2):
         else:
             new_dict[key] = vector_2[key]
 
-    return new_dict
+    # Remove 0 entries
+    res = {key: new_dict[key] for key in new_dict if new_dict[key] != 0}
+    return res
 
 
 if __name__ == '__main__':

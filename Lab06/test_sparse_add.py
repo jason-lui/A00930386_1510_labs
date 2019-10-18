@@ -43,5 +43,5 @@ class TestSparse_add(TestCase):
     def test_sparse_add_to_zero(self):
         v1 = {1: -5, 3: -3, 99: -1}
         v2 = {1: 5, 3: 3, 99: 1}
-        expected = {1: 0, 3: 0, 99: 0}
+        expected = {}
         self.assertEqual(expected, sparse_add(v1, v2))
