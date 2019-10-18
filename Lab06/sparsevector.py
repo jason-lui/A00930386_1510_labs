@@ -49,4 +49,3 @@ def sparse_add(vector_1, vector_2):
 
 if __name__ == '__main__':
     doctest.testmod()
-
