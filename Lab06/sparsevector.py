@@ -15,10 +15,10 @@ def sparse_add(vector_1, vector_2):
     """
     Add two vectors together.
 
-    :param vector_1: a list of integers
-    :param vector_2: a list of integers
-    :precondition: vector_1 must be a list of integers
-    :precondition: vector_2 must be a list of integers
+    :param vector_1: a dictionar
+    :param vector_2: a dictionary
+    :precondition: vector_1 must be a dictionary
+    :precondition: vector_2 must be a dictionary
     :postcondition: the vectors will be added together
     :return: a dictionary representing the combined vectors.
 
