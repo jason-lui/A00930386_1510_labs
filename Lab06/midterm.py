@@ -60,3 +60,25 @@ def prepender(los, s):
         los[i] = s + los[i]
 
 
+def name_list():
+    """
+    Create a dictionary of names organized by name length.
+
+    Type "quit" to end the function.
+    :precondition: name cannot be "quit"
+    :postcondition: a dictionary of names will be made
+    :return: the dictionary of names organized by name length
+    """
+    name_dict = {}
+    while True:
+        name = input("Enter a name:")
+        if name == "quit":
+            break
+        length = len(name)
+        if length in name_dict.keys():
+            name_dict[length].append(name.title())
+        else:
+            name_dict[length] = [name.title()]
+    return name_dict
+
+
