@@ -82,3 +82,18 @@ def name_list():
     return name_dict
 
 
+def multiples_of_3(upper_bound):
+    """
+    Sum the multiples of 3 that are less than a specified upper bound.
+
+    :param upper_bound: an integer
+    :precondition: upper_bound must be an integer
+    :postcondition: the multiples of 3 below the upper bound will be summed
+    :return: the sum of the multiples of 3 below the upper bound
+    """
+    total = 0
+    for num in range(0, upper_bound, 3):
+        total += num
+    return total
+
+
