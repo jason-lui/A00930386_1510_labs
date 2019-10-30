@@ -97,3 +97,20 @@ def multiples_of_3(upper_bound):
     return total
 
 
+def roll_die():
+    """
+    Simulate a die being rolled and print the results.
+
+    :precondition: inputs must be positive
+    :postcondition: the number of rolls for each side will be printed
+    """
+    number_of_sides = int(input("Enter the number of sides on the die: "))
+    number_of_rolls = int(input("Enter the number of rolls: "))
+    result = {side + 1: 0 for side in range(number_of_sides)}
+    while number_of_rolls != 0:
+        roll = random.randint(1, number_of_sides)
+        result[roll] += 1
+        number_of_rolls -= 1
+    for side in result.keys():
+        print(f"{side} was rolled {result[side]} time(s)")
+    return
