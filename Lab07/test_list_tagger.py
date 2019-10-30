@@ -9,12 +9,12 @@ class TestList_tagger(TestCase):
         expected = [0]
         self.assertEqual(expected, list_tagger(test_list))
 
-    def test_list_tagger_len_1(self):
+    def test_list_tagger_1(self):
         test_list = ["banana"]
         expected = [1, "banana"]
         self.assertEqual(expected, list_tagger(test_list))
 
-    def test_list_tagger_len_3(self):
+    def test_list_tagger_3(self):
         test_list = [1, 2, 3]
         expected = [3, 1, 2, 3]
         self.assertEqual(expected, list_tagger(test_list))
