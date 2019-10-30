@@ -14,7 +14,7 @@ def list_tagger(batch):
     [0]
     >>> list_tagger([1, 2, 3])
     [3, 1, 2, 3]
-    >>> list_tagger(["apple", "orange", "banana"])
+    >>> list_tagger(['apple', 'orange', 'banana'])
     [3, 'apple', 'orange', 'banana']
     """
     batch.insert(0, len(batch))
@@ -90,6 +90,11 @@ def multiples_of_3(upper_bound):
     :precondition: upper_bound must be an integer
     :postcondition: the multiples of 3 below the upper bound will be summed
     :return: the sum of the multiples of 3 below the upper bound
+
+    >>> multiples_of_3(0)
+    0
+    >>> multiples_of_3(10)
+    18
     """
     total = 0
     for num in range(0, upper_bound, 3):
