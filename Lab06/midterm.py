@@ -45,3 +45,18 @@ def cutoff(nums, div):
     return count
 
 
+def prepender(los, s):
+    """
+    Prepend a string to each string in a list of strings.
+
+    Modifies the list in place and returns None.
+    :param los: a list of strings
+    :param s: a string
+    :precondition: los must be a list of strings
+    :precondition: s must be a string
+    :postcondition: s will be prepended to each string in the list of strings
+    """
+    for i in range(len(los)):
+        los[i] = s + los[i]
+
+
