@@ -21,3 +21,27 @@ def list_tagger(batch):
     return batch
 
 
+def cutoff(nums, div):
+    """
+    Count the multiples of a number in a list.
+
+    :param nums: a list of integers
+    :param div: an integer
+    :precondition: nums must be a list of integers
+    :precondition: div must be an integer
+    :postcondition: the number of multiples of div in the list will be returned
+    :return: an integer that represents the number of multiples in the list
+
+    >>> cutoff([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 3)
+    3
+    >>> cutoff([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 10)
+    0
+    >>> cutoff([], 8)
+    0
+    """
+    count = 0
+    for num in nums:
+        count += 1 if num % div == 0 and num >= div else 0
+    return count
+
+
