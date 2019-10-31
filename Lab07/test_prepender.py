@@ -46,3 +46,18 @@ class TestPrepender(TestCase):
                     "Umm... than", "Umm... JavaScript"]
         prepender(test_list, test_prefix)
         self.assertEqual(expected, test_list)
+
+    def test_prepender_numbers(self):
+        test_list = [0, 1, 2, 3]
+        test_prefix = 2
+        expected = [2, 3, 4, 5]
+        prepender(test_list, test_prefix)
+        self.assertEqual(expected, test_list)
+
+    def test_prepender_list_of_lists(self):
+        test_list = [["Python", "is"], ["better", "than"], ["JavaScript"]]
+        test_prefix = ["Umm... "]
+        expected = [["Umm... ", "Python", "is"], ["Umm... ", "better",
+                    "than"], ["Umm... ", "JavaScript"]]
+        prepender(test_list, test_prefix)
+        self.assertEqual(expected, test_list)
