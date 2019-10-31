@@ -40,9 +40,8 @@ def cutoff(nums, div):
     0
     """
     count = 0
-    if div != 0:
-        for num in nums:
-            count += 1 if num % div == 0 and num >= div else 0
+    for num in nums:
+        count += 1 if num % div == 0 and num >= div else 0
     return count
 
 

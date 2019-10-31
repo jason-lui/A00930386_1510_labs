@@ -19,8 +19,7 @@ class TestCutoff(TestCase):
     def test_cutoff_0_and_0(self):
         test_list = [0]
         test_cutoff = 0
-        expected = 0
-        self.assertEqual(expected, cutoff(test_list, test_cutoff))
+        self.assertRaises(ZeroDivisionError, cutoff, test_list, test_cutoff)
 
     def test_cutoff_0_and_5(self):
         test_list = [0]
@@ -43,8 +42,7 @@ class TestCutoff(TestCase):
     def test_cutoff_5_pos_and_0(self):
         test_list = [1, 2, 3, 4, 5]
         test_cutoff = 0
-        expected = 0
-        self.assertEqual(expected, cutoff(test_list, test_cutoff))
+        self.assertRaises(ZeroDivisionError, cutoff, test_list, test_cutoff)
 
     def test_cutoff_5_pos_and_not_0(self):
         test_list = [1, 2, 3, 4, 5]
