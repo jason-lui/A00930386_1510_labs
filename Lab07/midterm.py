@@ -66,7 +66,6 @@ def name_list():
     Create a dictionary of names organized by name length.
 
     Type "quit" to end the function.
-    :precondition: name cannot be "quit"
     :postcondition: a dictionary of names will be made
     :return: the dictionary of names organized by name length
     """
@@ -107,7 +106,6 @@ def roll_die():
     """
     Simulate a die being rolled and print the results.
 
-    :precondition: inputs must be positive
     :postcondition: the number of rolls for each side will be printed
     """
     number_of_sides = int(input("Enter the number of sides on the die: "))
