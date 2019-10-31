@@ -75,10 +75,11 @@ def name_list():
         if name == "quit":
             break
         length = len(name)
+        name = name.title()
         if length in name_dict.keys():
-            name_dict[length].append(name.title())
+            name_dict[length].append(name)
         else:
-            name_dict[length] = [name.title()]
+            name_dict[length] = [name]
     return name_dict
 
 
