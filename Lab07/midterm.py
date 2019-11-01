@@ -121,12 +121,5 @@ def roll_die():
     return
 
 
-def main():
-    """
-    Drive the program.
-    """
-    doctest.testmod()
-
-
 if __name__ == '__main__':
-    main()
+    doctest.testmod()
