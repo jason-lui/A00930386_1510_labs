@@ -1,4 +1,5 @@
 import random
+import doctest
 
 
 def list_tagger(batch):
@@ -118,3 +119,14 @@ def roll_die():
     for side in result.keys():
         print(f"{side} was rolled {result[side]} time(s)")
     return
+
+
+def main():
+    """
+    Drive the program.
+    """
+    doctest.testmod()
+
+
+if __name__ == '__main__':
+    main()
