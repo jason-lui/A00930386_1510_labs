@@ -70,6 +70,6 @@ class TestCutoff(TestCase):
 
     def test_cutoff_negatives(self):
         test_list = [-1, -2, -3, -4, -5, -6]
-        test_cutoff = -1
-        expected = 1
+        test_cutoff = -2
+        expected = 3
         self.assertEqual(expected, cutoff(test_list, test_cutoff))

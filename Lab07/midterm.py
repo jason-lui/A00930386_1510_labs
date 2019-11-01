@@ -41,7 +41,7 @@ def cutoff(nums, div):
     """
     count = 0
     for num in nums:
-        count += 1 if num % div == 0 and num >= div else 0
+        count += 1 if num % div == 0 and num != 0 else 0
     return count
 
 
