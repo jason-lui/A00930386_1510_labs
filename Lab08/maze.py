@@ -68,7 +68,7 @@ def validate_move(board, character, direction):
     """
 
 
-def move_character(character: dict, move: str) -> dict:
+def move_character(character: dict, move: tuple) -> dict:
     """
     Move a character 1 space on the board.
 
@@ -78,9 +78,8 @@ def move_character(character: dict, move: str) -> dict:
     :precondition: move must be a string representing a cardinal direction
     :return: a dictionary containing the updated coordinates
     """
-    move_coords = {'north': (0, 1), 'east': (1, 0), 'south': (0, -1), 'west': (-1, 0)}
-    character['coords'][0] += move_coords[move][0]
-    character['coords'][1] += move_coords[move][1]
+    character['coords'][0] += move[0]
+    character['coords'][1] += move[1]
     return character
 
 
