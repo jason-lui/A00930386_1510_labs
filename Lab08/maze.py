@@ -54,7 +54,7 @@ def get_user_choice() -> tuple:
     3. South
     4. West""")
     choice = input("Enter your move (1-4): ")
-    move_coords = {'1': (0, 1), '2': (1, 0), '3': (0, -1), '3': (-1, 0)}
+    move_coords = {'1': (0, 1), '2': (1, 0), '3': (0, -1), '4': (-1, 0)}
     return move_coords[choice]
 
 
