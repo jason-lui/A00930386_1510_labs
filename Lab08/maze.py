@@ -22,6 +22,25 @@ def game():
     # Print end of game stuff
 
 
+def make_board():
+    """
+
+    :return:
+    """
+
+
+def make_character():
+    """
+    Create a dictionary that stores a tuple representing the character's location in the maze.
+
+    :postcondition: a character containing (0, 0) will be created
+    :return: a dictionary containing the location (0, 0) of the character
+    """
+    char_info = {'Coordinates': (0, 0)}
+    return char_info
+
+
+
 def main():
     """
     Drive the program.
