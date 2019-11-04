@@ -36,7 +36,7 @@ def make_character() -> dict:
     :postcondition: a character containing (0, 0) will be created
     :return: a dictionary containing the location (0, 0) of the character
     """
-    char_info = {'Coordinates': (0, 0)}
+    char_info = {'coords': (0, 0)}
     return char_info
 
 
@@ -77,10 +77,13 @@ def move_character(character: dict) -> dict:
 
 def check_if_exit_reached(character: dict) -> bool:
     """
+    Determine if the character is at the exit
 
-    :param character:
-    :return:
+    :param character: a dict containing the character's coordinates
+    :precondition: character must be a dictionary
+    :return: True or False depending on the character's location
     """
+    return True if character['coords'] == (4, 4) else False
 
 
 def main():
