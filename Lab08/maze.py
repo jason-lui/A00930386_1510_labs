@@ -3,23 +3,32 @@ import doctest
 
 def game():
     """
-
+    Run the maze game.
     """
-    board = make_board()
-
+    # Initial game state
     char = make_character()
+    game_board = update_board(char)
     found_exit = False
+    number_of_moves = 0
+
+    # Infinite loop for character movement
     while not found_exit:
         # Tell the user where they are
+        print_board(game_board)
+
+        # Get user input and validate input
         direction = get_user_choice()
-        valid_move = validate_move(board, char, direction)
+        valid_move = validate_move(game_board, char, direction)
+
         if valid_move:
+            # Move character and validate exit conditions
             move_character(char, direction)
             found_exit = check_if_exit_reached(char)
+            game_board = update_board(char)
+            number_of_moves += 1
         else:
-            # Tell the user they can’t go in that direction
-            print()
-    # Print end of game stuff
+            print("You can't go in that direction!")
+    print(f"It took you {number_of_moves} moves to reach the exit.")
 
 
 def make_board() -> list:
@@ -27,7 +36,7 @@ def make_board() -> list:
     Generate a 5x5 board.
 
     0 represents a vacant space, 1 represents an occupied space, 2 represents the exit
-    :postcondition: a 5x5 board will be generated with the character at (0, 0) and the exit at (4, 4)
+    :postcondition: a 5x5 board will be generated with the exit at (4, 4)
     :return: a list of lists of ints representing a 5x5 board
     """
     board = [[0] * 5 for i in range(5)]
@@ -49,6 +58,24 @@ def print_board(board: list):
         print('')
 
 
+def update_board(character: dict) -> list:
+    """
+    Update the board with the character's coordinates.
+
+    :param character: a dictionary
+    :param board: a list of lists
+    :precondition: character must be a dictionary containing the character's coordinates
+    :precondition: board must be a list of lists of int representing the board
+    :postcondition: the board will be updated with the character's current position
+    :return: the updated board as a list of lists
+    """
+    board = make_board()
+    x, y = character['coords'][0], character['coords'][1]
+    board[y][x] = 1
+
+    return board
+
+
 def make_character() -> dict:
     """
     Create a dictionary that stores a tuple representing the character's location in the maze.
@@ -67,14 +94,14 @@ def get_user_choice() -> tuple:
     :postcondition: the user's choice as a tuple containing coords of an xy-plane
     :return: the user's choice as a tuple
     """
-    print("""
-    Where would you like to move?
-    1. North
-    2. East
-    3. South
-    4. West""")
+    move_coords = {'1': (0, -1), '2': (1, 0), '3': (0, 1), '4': (-1, 0)}
+
+    print("Where would you like to move?")
+    print("1. North, 2. East, 3. South, 4. West")
     choice = input("Enter your move (1-4): ")
-    move_coords = {'1': (0, 1), '2': (1, 0), '3': (0, -1), '4': (-1, 0)}
+    while choice not in move_coords.keys():
+        choice = input("That is not a valid move. Choose a number between 1 and 4: ")
+    print('')
     return move_coords[choice]
 
 
@@ -93,7 +120,7 @@ def validate_move(board: list, character: dict, move: tuple) -> bool:
     """
     x = character['coords'][0] + move[0]
     y = character['coords'][1] + move[1]
-    return True if (x > len(board)) or (y > len(board[1])) else False
+    return True if ((0 <= x <= len(board) - 1) and (0 <= y <= len(board[1]) - 1)) else False
 
 
 def move_character(character: dict, move: tuple) -> dict:
@@ -106,8 +133,9 @@ def move_character(character: dict, move: tuple) -> dict:
     :precondition: move must be a string representing a cardinal direction
     :return: a dictionary containing the updated coordinates
     """
-    character['coords'][0] += move[0]
-    character['coords'][1] += move[1]
+    x = character['coords'][0] + move[0]
+    y = character['coords'][1] + move[1]
+    character['coords'] = (x, y)
     return character
 
 
@@ -130,6 +158,5 @@ def main():
 
 
 if __name__ == '__main__':
+    main()
     doctest.testmod()
-
-print_board([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 2]])
