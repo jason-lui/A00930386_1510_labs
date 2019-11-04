@@ -51,11 +51,23 @@ def print_board(board: list):
     :param board: a list of lists
     :precondition: board must be a list of lists of int representing the board
     :postcondition: the board will be printed as a 2D array
+
+    >>> print_board([[1,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,2]])
+    1 0 0 0 0
+    0 0 0 0 0
+    0 0 0 0 0
+    0 0 0 0 0
+    0 0 0 0 2
+    >>> print_board([[1,0,0], [0,0,0], [0,0,2]])
+    1 0 0
+    0 0 0
+    0 0 2
     """
     for row in board:
+        row_str = ""
         for cell in row:
-            print(cell, end=' ')
-        print('')
+            row_str += str(cell) + ' '
+        print(row_str.strip())
 
 
 def update_board(character: dict) -> list:
@@ -158,5 +170,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
     doctest.testmod()
