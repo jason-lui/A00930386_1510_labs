@@ -40,6 +40,38 @@ def make_character():
     return char_info
 
 
+def get_user_choice():
+    """
+
+    :return:
+    """
+
+
+def validate_move(board, character, direction):
+    """
+
+    :param board:
+    :param character:
+    :param direction:
+    :return:
+    """
+
+
+def move_character(character):
+    """
+
+    :param character:
+    :return:
+    """
+
+
+def check_if_exit_reached(character):
+    """
+
+    :param character:
+    :return:
+    """
+
 
 def main():
     """
