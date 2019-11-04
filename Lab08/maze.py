@@ -27,7 +27,7 @@ def make_board() -> list:
     Generate a 5x5 board.
 
     0 represents a vacant space, 1 represents an occupied space, 2 represents the exit
-    :postcondition: a 5x5 board will be generated
+    :postcondition: a 5x5 board will be generated with the character at (0, 0) and the exit at (4, 4)
     :return: a list of lists of ints representing a 5x5 board
     """
     board = [[0] * 5 for i in range(5)]
