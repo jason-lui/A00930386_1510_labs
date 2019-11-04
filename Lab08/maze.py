@@ -7,29 +7,29 @@ def game():
     """
     board = make_board()
 
-    character = make_character()
+    char = make_character()
     found_exit = False
     while not found_exit:
         # Tell the user where they are
         direction = get_user_choice()
-        valid_move = validate_move(board, character, direction)
+        valid_move = validate_move(board, char, direction)
         if valid_move:
-            move_character()
-            found_exit = check_if_exit_reached()
+            move_character(char)
+            found_exit = check_if_exit_reached(char)
         else:
             # Tell the user they can’t go in that direction
             print()
     # Print end of game stuff
 
 
-def make_board():
+def make_board() -> list[list[int]]:
     """
 
     :return:
     """
 
 
-def make_character():
+def make_character() -> dict:
     """
     Create a dictionary that stores a tuple representing the character's location in the maze.
 
@@ -40,11 +40,21 @@ def make_character():
     return char_info
 
 
-def get_user_choice():
+def get_user_choice() -> str:
     """
+    Show the user the available moves and get the user's choice
 
-    :return:
+    :postcondition: the user's choice will be returned as a string
+    :return: the user's choice as a string
     """
+    print("""
+    Where would you like to move?
+    1. North
+    2. East
+    3. South
+    4. West""")
+    choice = input("Enter your move (1-4): ")
+    return choice
 
 
 def validate_move(board, character, direction):
@@ -57,7 +67,7 @@ def validate_move(board, character, direction):
     """
 
 
-def move_character(character):
+def move_character(character: dict) -> dict:
     """
 
     :param character:
@@ -65,7 +75,7 @@ def move_character(character):
     """
 
 
-def check_if_exit_reached(character):
+def check_if_exit_reached(character: dict) -> bool:
     """
 
     :param character:
