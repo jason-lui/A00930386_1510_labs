@@ -44,7 +44,7 @@ def get_user_choice() -> str:
     """
     Show the user the available moves and get the user's choice
 
-    :postcondition: the user's choice will be returned as a string
+    :postcondition: the user's choice as a cardinal direction
     :return: the user's choice as a string
     """
     print("""
@@ -54,7 +54,8 @@ def get_user_choice() -> str:
     3. South
     4. West""")
     choice = input("Enter your move (1-4): ")
-    return choice
+    move_list = {'1': 'north', '2': 'east', '3': 'south', '4': 'west'}
+    return move_list[choice]
 
 
 def validate_move(board, character, direction):
@@ -67,12 +68,14 @@ def validate_move(board, character, direction):
     """
 
 
-def move_character(character: dict) -> dict:
+def move_character(character: dict, move: str) -> dict:
     """
 
     :param character:
+    :param move:
     :return:
     """
+    move_list = {}
 
 
 def check_if_exit_reached(character: dict) -> bool:
