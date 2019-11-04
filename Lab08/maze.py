@@ -40,12 +40,12 @@ def make_character() -> dict:
     return char_info
 
 
-def get_user_choice() -> str:
+def get_user_choice() -> tuple:
     """
-    Show the user the available moves and get the user's choice
+    Show the user the available moves and get the user's movement direction
 
-    :postcondition: the user's choice as a cardinal direction
-    :return: the user's choice as a string
+    :postcondition: the user's choice as a tuple containing coords of an xy-plane
+    :return: the user's choice as a tuple
     """
     print("""
     Where would you like to move?
@@ -54,8 +54,8 @@ def get_user_choice() -> str:
     3. South
     4. West""")
     choice = input("Enter your move (1-4): ")
-    move_list = {'1': 'north', '2': 'east', '3': 'south', '4': 'west'}
-    return move_list[choice]
+    move_coords = {'1': (0, 1), '2': (1, 0), '3': (0, -1), '3': (-1, 0)}
+    return move_coords[choice]
 
 
 def validate_move(board, character, direction):
