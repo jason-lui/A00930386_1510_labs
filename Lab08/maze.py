@@ -58,14 +58,22 @@ def get_user_choice() -> tuple:
     return move_coords[choice]
 
 
-def validate_move(board, character, direction):
+def validate_move(board: list[list[int]], character: dict, move: tuple) -> bool:
     """
+    Determine if a move is valid.
 
-    :param board:
-    :param character:
-    :param direction:
-    :return:
+    :param board: a list of lists
+    :param character: a dictionary
+    :param move: a tuple
+    :precondition: board must be a list of lists of int representing the board
+    :precondition: character must be a dictionary containing the character's coordinates
+    :precondition: direction must be a tuple representing a direction of movement
+    :postcondition: the move will be validated
+    :return: True or False depending on whether the move is valid
     """
+    x = character['coords'][0] + move[0]
+    y = character['coords'][1] + move[1]
+    return True if (x > len(board)) or (y > len(board[1])) else False
 
 
 def move_character(character: dict, move: tuple) -> dict:
@@ -88,7 +96,7 @@ def check_if_exit_reached(character: dict) -> bool:
     Determine if the character is at the exit
 
     :param character: a dictionary
-    :precondition: character must be a dictionary
+    :precondition: character must be a dictionary containing the character's coordinates
     :return: True or False depending on the character's location
     """
     return True if character['coords'] == (4, 4) else False
