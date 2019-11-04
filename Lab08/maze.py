@@ -14,7 +14,7 @@ def game():
         direction = get_user_choice()
         valid_move = validate_move(board, char, direction)
         if valid_move:
-            move_character(char)
+            move_character(char, direction)
             found_exit = check_if_exit_reached(char)
         else:
             # Tell the user they can’t go in that direction
@@ -22,11 +22,31 @@ def game():
     # Print end of game stuff
 
 
-def make_board() -> list[list[int]]:
+def make_board() -> list:
     """
+    Generate a 5x5 board.
 
-    :return:
+    0 represents a vacant space, 1 represents an occupied space, 2 represents the exit
+    :postcondition: a 5x5 board will be generated
+    :return: a list of lists of ints representing a 5x5 board
     """
+    board = [[0] * 5 for i in range(5)]
+    board[-1][-1] += 2
+    return board
+
+
+def print_board(board: list):
+    """
+    Print the board.
+
+    :param board: a list of lists
+    :precondition: board must be a list of lists of int representing the board
+    :postcondition: the board will be printed as a 2D array
+    """
+    for row in board:
+        for cell in row:
+            print(cell, end=' ')
+        print('')
 
 
 def make_character() -> dict:
@@ -58,7 +78,7 @@ def get_user_choice() -> tuple:
     return move_coords[choice]
 
 
-def validate_move(board: list[list[int]], character: dict, move: tuple) -> bool:
+def validate_move(board: list, character: dict, move: tuple) -> bool:
     """
     Determine if a move is valid.
 
@@ -111,3 +131,5 @@ def main():
 
 if __name__ == '__main__':
     doctest.testmod()
+
+print_board([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 2]])
