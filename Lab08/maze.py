@@ -75,7 +75,6 @@ def update_board(character: dict) -> list:
     Update the board with the character's coordinates.
 
     :param character: a dictionary
-    :param board: a list of lists
     :precondition: character must be a dictionary containing the character's coordinates
     :precondition: board must be a list of lists of int representing the board
     :postcondition: the board will be updated with the character's current position
