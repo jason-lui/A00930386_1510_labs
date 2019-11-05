@@ -112,7 +112,8 @@ def get_user_choice() -> tuple:
     print("1. North, 2. East, 3. South, 4. West")
     choice = input("Enter your move (1-4): ")
     while choice not in move_coords.keys():
-        choice = input("That is not a valid move. Choose a number between 1 and 4: ")
+        print("That is not a valid move.")
+        choice = input("Choose a number between 1 and 4: ")
     print('')
     return move_coords[choice]
 
@@ -170,5 +171,5 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
+    main()
     doctest.testmod()
