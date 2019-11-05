@@ -27,6 +27,7 @@ That is not a valid move.
         get_user_choice()
         self.assertEqual(expected, mock_output.getvalue())
 
+    # Keep stdout so that print statements are not shown while unit testing return values
     @patch("sys.stdout", new_callable=io.StringIO)
     @patch("builtins.input", return_value="1")
     def test_get_user_choice_1_return_value(self, mock_input, mock_output):
