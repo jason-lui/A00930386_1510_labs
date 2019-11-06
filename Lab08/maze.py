@@ -3,7 +3,7 @@ import doctest
 
 def game():
     """
-    Run the maze game.
+    Run the maze game until an exit has been found.
     """
     # Initial game state
     char = make_character()
@@ -79,6 +79,11 @@ def update_board(character: dict) -> list:
     :precondition: board must be a list of lists of int representing the board
     :postcondition: the board will be updated with the character's current position
     :return: the updated board as a list of lists
+
+    >>> update_board({'coords': (0, 0)})
+    [[1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 2]]
+    >>> update_board({'coords': (1, 1)})
+    [[0, 0, 0, 0, 0], [0, 1, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 2]]
     """
     board = make_board()
     x, y = character['coords'][0], character['coords'][1]
@@ -129,6 +134,11 @@ def validate_move(board: list, character: dict, move: tuple) -> bool:
     :precondition: direction must be a tuple representing a direction of movement
     :postcondition: the move will be validated
     :return: True or False depending on whether the move is valid
+
+    >>> validate_move([[1,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,2]], {'coords': (0, 0)}, (0, -1))
+    False
+    >>> validate_move([[1,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,2]], {'coords': (0, 0)}, (0, 1))
+    True
     """
     x = character['coords'][0] + move[0]
     y = character['coords'][1] + move[1]
@@ -144,6 +154,15 @@ def move_character(character: dict, move: tuple) -> dict:
     :precondition: character must be a dictionary containing the character's coordinates
     :precondition: move must be a string representing a cardinal direction
     :return: a dictionary containing the updated coordinates
+
+    >>> move_character({'coords': (0, 0)}, (0, 1))
+    {'coords': (0, 1)}
+    >>> move_character({'coords': (0, 0)}, (1, 0))
+    {'coords': (1, 0)}
+    >>> move_character({'coords': (1, 1)}, (0, -1))
+    {'coords': (1, 0)}
+    >>> move_character({'coords': (1, 1)}, (-1, 0))
+    {'coords': (0, 1)}
     """
     x = character['coords'][0] + move[0]
     y = character['coords'][1] + move[1]
@@ -158,6 +177,11 @@ def check_if_exit_reached(character: dict) -> bool:
     :param character: a dictionary
     :precondition: character must be a dictionary containing the character's coordinates
     :return: True or False depending on the character's location
+
+    >>> check_if_exit_reached({'coords': (0, 0)})
+    False
+    >>> check_if_exit_reached({'coords': (4, 4)})
+    True
     """
     return True if character['coords'] == (4, 4) else False
 
