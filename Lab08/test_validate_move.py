@@ -1,25 +1,80 @@
 from unittest import TestCase
 from maze import validate_move
 
+top_left = [[1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 2]]
+top_right = [[0, 0, 0, 0, 1], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 2]]
+bot_left = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [1, 0, 0, 0, 2]]
+bot_right = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 1]]
+
 
 class TestValidate_move(TestCase):
 
-    # def validate_move(board: list, character: dict, move: tuple) -> bool:
-    #     """
-    #     Determine if a move is valid.
-    #
-    #     :param board: a list of lists
-    #     :param character: a dictionary
-    #     :param move: a tuple
-    #     :precondition: board must be a list of lists of int representing the board
-    #     :precondition: character must be a dictionary containing the character's coordinates
-    #     :precondition: direction must be a tuple representing a direction of movement
-    #     :postcondition: the move will be validated
-    #     :return: True or False depending on whether the move is valid
-    #     """
-    #     x = character['coords'][0] + move[0]
-    #     y = character['coords'][1] + move[1]
-    #     return True if ((0 <= x <= len(board) - 1) and (0 <= y <= len(board[1]) - 1)) else False
+    def test_validate_move_0_0_move_east(self):
+        test_board = top_left
+        test_char = {'coords': (0, 0)}
+        test_move = (1, 0)
+        expected = True
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
 
-    def test_validate_move(self):
-        self.fail()
+    def test_validate_move_0_0_move_south(self):
+        test_board = top_left
+        test_char = {'coords': (0, 0)}
+        test_move = (0, 1)
+        expected = True
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
+
+    def test_validate_move_0_0_move_north(self):
+        test_board = top_left
+        test_char = {'coords': (0, 0)}
+        test_move = (0, -1)
+        expected = False
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
+
+    def test_validate_move_0_0_move_west(self):
+        test_board = top_left
+        test_char = {'coords': (0, 0)}
+        test_move = (-1, 0)
+        expected = False
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
+
+    def test_validate_move_4_0_move_north(self):
+        test_board = top_right
+        test_char = {'coords': (4, 0)}
+        test_move = (0, -1)
+        expected = False
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
+
+    def test_validate_move_4_0_move_east(self):
+        test_board = top_right
+        test_char = {'coords': (4, 0)}
+        test_move = (1, 0)
+        expected = False
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
+
+    def test_validate_move_0_4_move_west(self):
+        test_board = bot_left
+        test_char = {'coords': (0, 4)}
+        test_move = (-1, 0)
+        expected = False
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
+
+    def test_validate_move_0_4_move_south(self):
+        test_board = bot_left
+        test_char = {'coords': (0, 4)}
+        test_move = (0, 1)
+        expected = False
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
+
+    def test_validate_move_4_4_move_south(self):
+        test_board = bot_right
+        test_char = {'coords': (4, 4)}
+        test_move = (0, 1)
+        expected = False
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
+
+    def test_validate_move_4_4_move_east(self):
+        test_board = bot_right
+        test_char = {'coords': (4, 4)}
+        test_move = (1, 0)
+        expected = False
+        self.assertEqual(expected, validate_move(test_board, test_char, test_move))
