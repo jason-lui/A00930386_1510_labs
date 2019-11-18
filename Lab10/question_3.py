@@ -1,4 +1,4 @@
-def dijkstra(arr: list) -> list:
+def dijkstra(arr: list):
     """
 
     :param arr:
