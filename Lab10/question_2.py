@@ -1,4 +1,4 @@
-def gcd(a, b):
+def gcd(a: int, b: int) -> int:
     """
 
     :param a:
