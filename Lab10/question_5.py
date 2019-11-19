@@ -5,7 +5,7 @@ def cash_money(cad: float) -> dict:
     """
     Determine the minimum amount of currency units needed to represent a floating point number.
 
-    :param cad: a float
+    :param cad: a floating point number
     :precondition: cad must be a positive float
     :postcondition: the minimum amount of currency units will be determined
     :return: the amount of each currency unit used to represent the float as a dictionary
