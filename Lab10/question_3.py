@@ -3,7 +3,7 @@ def dijkstra(dutch_colors: list):
     Sort a list of 'red', 'white' and 'blue' strings based on the Dutch flag partition.
 
     :param dutch_colors: a list
-    :precondition: dutch_colors must be a list of strings containing only 'red', 'white' and 'blue' strings
+    :precondition: dutch_colors must be a list containing only 'red', 'white' and 'blue' strings
     :postcondition: the list will be sorted by 'red', 'white', 'blue' in place
     """
     red = 0
