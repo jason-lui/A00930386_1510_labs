@@ -12,11 +12,11 @@ def timer(func):
     :return: the wrapped function
     """
     def wrapper(*args, **kwargs):
-        start = time.perf_counter()
-        func(*args, **kwargs)
-        end = time.perf_counter()
+        start = time.perf_counter()  # Start time
+        func(*args, **kwargs)  # Function call
+        end = time.perf_counter()  # End time
 
-        with open('results.txt', 'a') as file_obj:
+        with open('results.txt', 'a') as file_obj:  # Append results to results.txt
             file_obj.write(f"{func.__name__}({args[0]}) completed in {(end - start) * 1000:.4f} milliseconds.")
             file_obj.write("\n")
     return wrapper
@@ -75,9 +75,9 @@ def factorial_recursive_helper(n: int) -> int:
     >>> factorial_recursive_helper(4)
     24
     """
-    if n == 1:
+    if n == 1:  # Base case
         return 1
-    else:
+    else:  # Recursive call
         return n * factorial_recursive_helper(n - 1)
 
 
@@ -85,12 +85,17 @@ def main():
     """
     Drive the program.
     """
+    # Clear results.txt if it exists, otherwise make a new text file
+    with open('results.txt', 'w') as file_obj:
+        file_obj.write("")
+
     for num in range(1, 101):
         factorial_iterative(num)
+
     for num in range(1, 101):
         factorial_recursive(num)
 
 
 if __name__ == '__main__':
-    doctest.testmod()
     main()
+    doctest.testmod()
