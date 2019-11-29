@@ -85,7 +85,7 @@ def main():
     """
     Drive the program.
     """
-    # Clear results.txt if it exists, otherwise make a new text file
+    # Clear results.txt if it exists, otherwise generate a new text file
     with open('results.txt', 'w') as file_obj:
         file_obj.write("")
 
