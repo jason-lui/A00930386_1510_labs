@@ -17,7 +17,7 @@ def timer(func):
         end = time.perf_counter()
 
         with open('results.txt', 'a') as file_obj:
-            file_obj.write(f"{func.__name__} for {args[0]}! completed in {(end - start) * 1000:.4f} milliseconds.")
+            file_obj.write(f"{func.__name__}({args[0]}) completed in {(end - start) * 1000:.4f} milliseconds.")
             file_obj.write("\n")
     return wrapper
 
